@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>NXP 开源ISP工具 | 深圳单片机开发 1158169623@qq.com</title>
+  <title>STC 单片机ISP | 深圳单片机开发 1158169623@qq.com</title>
   <meta name="author" content="wirebed.com">
   
   <meta name="description" content="深圳单片机软件，硬件快速开发。51，stm8，arm等单片机">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="NXP 开源ISP工具"/>
+  <meta property="og:title" content="STC 单片机ISP"/>
   <meta property="og:site_name" content="深圳单片机开发 1158169623@qq.com"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> NXP 开源ISP工具</h1>
+			<h1 class="title title-inverse "> STC 单片机ISP</h1>
 		</div>		
 	
 
@@ -111,22 +111,25 @@
 	<div class="mypage">		
 	  		
 
-	  <p>NXP arm单片机常用的ISP工具是 <a href="http://www.flashmagictool.com/" target="_blank" rel="external">flashmagic</a>。<br>也有开源的ISP工具 <a href="https://sourceforge.net/projects/lpc21isp/" target="_blank" rel="external">lpc21isp</a>.<br><a id="more"></a><br>lpc21isp在windows下编译过程：</p>
-<blockquote>
-<p>To compile with microsoft visual studio:</p>
-<ul>
-<li>Open console. Execute bat file from your installation, e.g.<br>“c:\Program Files\Microsoft Visual Studio 9.0\VC\bin\vcvars32.bat”</li>
-<li>Go to directory where you unpacked the source.</li>
-<li>Run<br>nmake /f Makefile.vc clean all</li>
-</ul>
-</blockquote>
-<p>编译成功运行</p>
-<blockquote>
-<p>Portable command line ISP<br>for NXP LPC family and Analog Devices ADUC 70xx<br>Version 1.97 compiled for Windows: Jul 13 2017, 11:08:23<br>Copyright (c) by Martin Maurer, 2003-2013, Email: Martin.Maurer@clibb.de<br>Portions Copyright (c) by Aeolus Development 2004, www.aeolusdevelopment.com</p>
-<p>Syntax:  lpc21isp [Options] file[ file[ …]] comport baudrate Oscillator_in_kHz</p>
-<p>Example: lpc21isp test.hex com1 115200 14746</p>
-<p>Options: -bin         for uploading binary file<br>         -hex         for uploading file in intel hex format (default)<br>         -term        for starting terminal after upload<br>         -termonly    for starting terminal without an upload<br>         -localecho   for local echo in terminal<br>         -detectonly  detect only used LPC chiptype (NXPARM only)<br>         -debug0      for no debug<br>         -debug3      for progress info only<br>         -debug5      for full debug<br>         -donotstart  do not start MCU after download<br>         -try<n>      try n times to synchronise<br>         -wipe        Erase entire device before upload<br>         -control     for controlling RS232 lines for easier booting<br>                      (Reset = DTR, EnableBootLoader = RTS)<br>         -boothold    hold EnableBootLoader asserted throughout sequence<br>         -controlswap swap RS232 control lines<br>                      (Reset = RTS, EnableBootLoader = DTR)<br>         -controlinv  Invert state of RTS &amp; DTR<br>                      (0=true/assert/set, 1=false/deassert/clear).<br>         -verify      Verify the data in Flash after every writes to<br>                      sector. To detect errors in writing to Flash ROM<br>         -logfile     for enabling logging of terminal output to lpc21isp.log<br>         -halfduplex  use halfduplex serial communication (i.e. with K-Line)<br>         -writedelay  Add delay after serial port writes (for compatibility)<br>         -ADARM       for downloading to an Analog Devices<br>                      ARM microcontroller ADUC70xx<br>         -NXPARM      for downloading to a chip of NXP LPC family (default)</n></p>
-</blockquote>
+	  <p>STC-ISP 单片机程序加密后传输(自定义加密下载)<br>使用STC-ISP的“程序加密后传输”功能，厂家先生成升级密钥，出厂前写入单片机。<br>以后只需以EMAIL或提供下载的方法提供加密过的BIN/HEX升级固件文件给客户ISP升级即可。</p>
+<p>单片机使用体内的原始密钥进行解密后升级，而在新芯片上是无法解密HEX文件进行升级的</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>此功能仅对如下系列及新出的单片机有效:<br>STC15F2K60S2/STC15L2K60S2<br>IAP15F2K61S2/IAP15L2K61S2<br>STC15F104W/STC15L104W<br>IAP15F105W/STC15L105W<br>STC15W104SW/IAP15W105W</p>
+<h1 id="只下载加密代码的使用方法"><a href="#只下载加密代码的使用方法" class="headerlink" title="只下载加密代码的使用方法"></a>只下载加密代码的使用方法</h1><ol>
+<li>点击”打开程序文件”按钮,打开加密过的文件</li>
+<li>选择”本次下载的代码为加密代码”选项</li>
+<li>点击”下载/编程”按钮开始编程</li>
+</ol>
+<h1 id="重新加密代码的使用方法"><a href="#重新加密代码的使用方法" class="headerlink" title="重新加密代码的使用方法"></a>重新加密代码的使用方法</h1><ol>
+<li>点击”生成新密钥”或者”打开密钥”</li>
+<li>点击”加密代码”按钮</li>
+<li>在打开对话框中选择未加密的文件</li>
+<li>在保存对话框中输入加密后的文件名</li>
+</ol>
+<h1 id="更新IC内部密钥的使用方法"><a href="#更新IC内部密钥的使用方法" class="headerlink" title="更新IC内部密钥的使用方法"></a>更新IC内部密钥的使用方法</h1><ol>
+<li>点击”生成新密钥”或者”打开密钥”</li>
+<li>选择”下载用户代码前先更新用户密钥”选项</li>
+<li>点击”下载/编程”按钮开始编程</li>
+</ol>
 	  
 	</div>
 
@@ -135,14 +138,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2017/07/13/stc isp/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2017/07/12/isp and iap/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2017/07/13/nxp isp tool/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -204,7 +207,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/单片机/">单片机<span>4</span></a></li> <li><a href="/categories/单片机/ISP/">ISP<span>1</span></a></li>
+    <li><a href="/categories/单片机/">单片机<span>4</span></a></li>
   </li>
 
     </ul>
@@ -217,18 +220,13 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/ISP/">ISP<span>3</span></a></li> <li><a href="/tags/单片机/">单片机<span>2</span></a></li> <li><a href="/tags/NXP/">NXP<span>1</span></a></li>
+  <li><a href="/tags/ISP/">ISP<span>3</span></a></li> <li><a href="/tags/单片机，STC/">单片机，STC<span>1</span></a></li>
     </ul>
 	</div>
 		
 
 	<!-- toc -->
 	<div class="meta-widget">
-	
-	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
-	   <div id="toc" class="toc collapse in">
-			
-		</div>
 	
 	</div>
 	
