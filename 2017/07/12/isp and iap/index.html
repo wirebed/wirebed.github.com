@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>wirebed状态机软件发布 | 深圳单片机开发 1158169623@qq.com</title>
+  <title>单片机ISP、IAP、DFU | 深圳单片机开发 1158169623@qq.com</title>
   <meta name="author" content="wirebed.com">
   
   <meta name="description" content="深圳单片机软件，硬件快速开发。51，stm8，arm等单片机">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="wirebed状态机软件发布"/>
+  <meta property="og:title" content="单片机ISP、IAP、DFU"/>
   <meta property="og:site_name" content="深圳单片机开发 1158169623@qq.com"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> wirebed状态机软件发布</h1>
+			<h1 class="title title-inverse "> 单片机ISP、IAP、DFU</h1>
 		</div>		
 	
 
@@ -111,9 +111,10 @@
 	<div class="mypage">		
 	  		
 
-	  <p>wirebed.com annouce new graphic progamming tool for embed processor.</p>
-<p><a href="https://bitbucket.org/iboards/iboard/raw/7a3044d7607f255e8c07462baf5a56a6f7707c35/version%201.2/wirebed-1.2-installer.exe" target="_blank" rel="external">download wirebed windows installer</a><br><a href="http://pan.baidu.com/s/1dF1UeOh" target="_blank" rel="external">download from baidu</a></p>
-<p><img src="http://wirebed.com/img/serial-monitor.gif" alt="wirebed serial monitor"></p>
+	  <p>8051单片机流行的时代，做单片机开发都需要一个专用工具，就是单片机的编程器，或者叫烧写器。说“烧”写一点不为过，当年的经典芯片AT89C51在编程时需要十几伏的高电压，加在一个特定的引脚上，才能进入编程。<br><a id="more"></a>   </p>
+<h2 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h2><p>ISP的技术，即在系统编程。在系统编程就是通过串口或者其他通用的通用通信接口，为芯片编程。ISP技术的实现，其实就是依赖于芯片在出厂时预先烧写的bootloader程序，bootloader还有很多不同的叫法，比如ISP服务程序（STC宏晶的51单片机这么叫）、bootstrap（MSP430的BSL编程这么叫）等等。但本质上都是相同的。</p>
+<h2 id="IAP"><a href="#IAP" class="headerlink" title="IAP"></a>IAP</h2><p>IAP，即在应用编程。IAP技术允许用户程序修改flash。说白了IAP就是允许用户自定义bootloader，或者说有2个bootloader，一个bootloader是芯片出厂时固化的，另一个是用户自定义的。</p>
+<h2 id="DFU"><a href="#DFU" class="headerlink" title="DFU"></a>DFU</h2><p>DFU是Device Firmware Upgrade的缩写，DFU模式就是支持USB的bootloader。。。DFU模式通常需要特定的驱动程序，因为现在的芯片USB接口通常工作于VCP（Virtual COM Port）模式，插到电脑上后会虚拟成一个串口设备。而DFU模式则于此不同。VCP模式下，PC端是一个串口驱动程序，MCU端是用户程序。而DFU模式下，PC端是DFU驱动程序，MCU端是bootloader。DFU模式的bootloader通常是用户自定义的，并通过固化的bootloader由串口刷入。</p>
 	  
 	</div>
 
@@ -123,13 +124,13 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2017/07/12/isp and iap/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2017/07/12/state machine/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-          <li class="next disabled"><a>下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2017/06/16/wirebed release/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -180,7 +181,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-06-16 
+	2017-07-12 
 	</div>
 	
 
@@ -191,7 +192,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/软件/">软件<span>1</span></a></li>
+    <li><a href="/categories/单片机/">单片机<span>3</span></a></li>
   </li>
 
     </ul>
@@ -204,13 +205,18 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/软件/">软件<span>1</span></a></li> <li><a href="/tags/状态机/">状态机<span>2</span></a></li>
+  <li><a href="/tags/ISP/">ISP<span>2</span></a></li> <li><a href="/tags/单片机/">单片机<span>2</span></a></li> <li><a href="/tags/IAP/">IAP<span>1</span></a></li>
     </ul>
 	</div>
 		
 
 	<!-- toc -->
 	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#ISP"><span class="toc-article-text">ISP</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#IAP"><span class="toc-article-text">IAP</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#DFU"><span class="toc-article-text">DFU</span></a></li></ol>
+		</div>
 	
 	</div>
 	

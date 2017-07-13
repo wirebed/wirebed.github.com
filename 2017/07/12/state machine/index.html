@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>wirebed状态机软件发布 | 深圳单片机开发 1158169623@qq.com</title>
+  <title>单片机状态机开发 | 深圳单片机开发 1158169623@qq.com</title>
   <meta name="author" content="wirebed.com">
   
   <meta name="description" content="深圳单片机软件，硬件快速开发。51，stm8，arm等单片机">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="wirebed状态机软件发布"/>
+  <meta property="og:title" content="单片机状态机开发"/>
   <meta property="og:site_name" content="深圳单片机开发 1158169623@qq.com"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> wirebed状态机软件发布</h1>
+			<h1 class="title title-inverse "> 单片机状态机开发</h1>
 		</div>		
 	
 
@@ -111,9 +111,8 @@
 	<div class="mypage">		
 	  		
 
-	  <p>wirebed.com annouce new graphic progamming tool for embed processor.</p>
-<p><a href="https://bitbucket.org/iboards/iboard/raw/7a3044d7607f255e8c07462baf5a56a6f7707c35/version%201.2/wirebed-1.2-installer.exe" target="_blank" rel="external">download wirebed windows installer</a><br><a href="http://pan.baidu.com/s/1dF1UeOh" target="_blank" rel="external">download from baidu</a></p>
-<p><img src="http://wirebed.com/img/serial-monitor.gif" alt="wirebed serial monitor"></p>
+	  <p>常用的单片机状态处理代码<br><a id="more"></a><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">cur_state = nxt_state;</div><div class="line">    <span class="keyword">switch</span>(cur_state)&#123;                  <span class="comment">//在当前状态中判断事件</span></div><div class="line">        <span class="keyword">case</span> s0:                        <span class="comment">//在s0状态</span></div><div class="line">            <span class="keyword">if</span>(e0_event)&#123;               <span class="comment">//如果发生e0事件，那么就执行a0动作，并保持状态不变；</span></div><div class="line">                <span class="comment">//执行a0动作;</span></div><div class="line">                <span class="comment">//nxt_state = s0;       //因为状态号是自身，所以可以删除此句，以提高运行速度。</span></div><div class="line">            &#125;</div><div class="line">         </div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(e1_event)&#123;          <span class="comment">//如果发生e1事件，那么就执行a1动作，并将状态转移到s1态；</span></div><div class="line">                <span class="comment">//执行a1动作;</span></div><div class="line">                nxt_state = s1;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(e2_event)&#123;          <span class="comment">//如果发生e2事件，那么就执行a2动作，并将状态转移到s2态；</span></div><div class="line">                <span class="comment">//执行a2动作;</span></div><div class="line">                nxt_state = s2;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> s1:                        <span class="comment">//在s1状态</span></div><div class="line">            <span class="keyword">if</span>(e2_event)&#123;               <span class="comment">//如果发生e2事件，那么就执行a2动作，并将状态转移到s2态；</span></div><div class="line">                <span class="comment">//执行a2动作;</span></div><div class="line">                nxt_state = s2;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> s2:                        <span class="comment">//在s2状态</span></div><div class="line">            <span class="keyword">if</span>(e0_event)&#123;               <span class="comment">//如果发生e0事件，那么就执行a0动作，并将状态转移到s0态；</span></div><div class="line">                <span class="comment">//执行a0动作;</span></div><div class="line">                nxt_state = s0;</div><div class="line">            &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>用wirebed代码的软件自动产生所有的状态机代码。</p>
 	  
 	</div>
 
@@ -123,13 +122,13 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2017/07/12/isp and iap/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2017/07/13/nxp isp tool/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-          <li class="next disabled"><a>下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2017/07/12/isp and iap/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -180,7 +179,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-06-16 
+	2017-07-12 
 	</div>
 	
 
@@ -191,7 +190,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/软件/">软件<span>1</span></a></li>
+    <li><a href="/categories/单片机/">单片机<span>3</span></a></li>
   </li>
 
     </ul>
@@ -204,7 +203,7 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/软件/">软件<span>1</span></a></li> <li><a href="/tags/状态机/">状态机<span>2</span></a></li>
+  <li><a href="/tags/状态机/">状态机<span>2</span></a></li>
     </ul>
 	</div>
 		
