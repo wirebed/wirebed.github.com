@@ -1,0 +1,4 @@
+1.用整个文件替换nginx 文件的html内容
+2.修改默认的数据库用远程的service：<script src="js/models/model-rest-jsonp.js"></script>
+3.修改 地址 ；（默认本地）
+4.
