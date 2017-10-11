@@ -83,7 +83,7 @@ directory.MemoryStore = function (successCallback, errorCallback) {
     }
 
     this.employees = [        
-        {"id": 2, "firstName": "Ingenu", "lastName": "RPMA", "managerId": 0, managerName: "", "title": "Ingenu LPWAN Technology - RPMA", "department": "", "cellPhone": "", "officePhone": "", "email": "", "city": "", "pic": "ingenu_rpma.jpg", "twitterId": "", "blog": "","copyright":"gnu", "type":"Communication","url":"contact us"}        
+        {"id": 2, "firstName": "Ingenu", "lastName": "RPMA", "managerId": 0, managerName: "", "title": "Ingenu LPWAN Technology - RPMA", "department": "", "cellPhone": "", "officePhone": "", "email": "", "city": "", "pic": "ingenu_rpma.jpg", "twitterId": "", "blog": "","copyright":"gnu", "type":"Communication","url":"contact us","info":"work in progress"}        
     ];
 
     callLater(successCallback);
