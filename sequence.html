@@ -296,42 +296,18 @@ pre {
 	*/
 }
 </style>
-<title>blockMemInit.md</title>
+<title>sequence.md</title>
 </head>
 <body>
 <h1></h1>
 
-<h1><center>blockMemInit</center></h1>
+<h1><center>task start sequence</center></h1>
 
-<p><strong>note: define block_mem_t before use this api.</strong></p>
+<p>the services run in background.
+All the tasks run in a lowest priority service.
+All tasks share stack. </p>
 
-<hr>
-
-<pre><code class="CPP">/**
-* block memory init.
-* @param pmem        - block memory struct pointer
-* @param addr        - block memory block addr  
-* @param nblks       - block memory block number
-* @param blksize     - block memory block size in byte.
-*/
-
-uint32_t  blockMemInit (block_mem_t * pmem, void *addr, uint32_t nblks, uint32_t blksize);
-
-static uint32_t data[10][4];
-block_mem_t mem1;
-
-void test_code()
-{
-    blockMemInit(&amp;mem1,data,dta,10,4*sizeof(uint32_t));
-    //...
-
-}
-
-
-</code></pre>
-
-<p><a href="api/blockMemGet.html">blockMemGet</a><br>
-<a href="api/blockMemPut.html">blockMemPut</a>   </p>
+<p><img src="./img/sequence.png" alt="task start sequence" title="task start sequence">   </p>
 
 <p><a href="api.html">API reference</a></p>
 
