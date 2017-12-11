@@ -296,118 +296,55 @@ pre {
 	*/
 }
 </style>
-<title>api.md</title>
+<title>taskSemaphoreEvent.md</title>
 </head>
 <body>
-<h1><center>Wirebed OS API</center></h1>
+<h1></h1>
+
+<h1><center>taskSemaphoreEvent</center></h1>
+
+<p><strong>note: this notify API works for task event notification.</strong><br>
+<strong>this api usually for resource request. for example i2c driver.</strong>  </p>
 
 <hr>
 
-<h2>wirebed os api overview</h2>
+<pre><code class="CPP">
+/** event prototype define **/
+typedef void (*event_t)();
 
-<p>There are 3 kinds of APIs.</p>
+/**
+* task semaphore notify register for event.
+* @param sp       - semaphore pointer
+* @param evt      - event_t function pointer. 
+*/
 
-<ul>
-<li>API for task </li>
-<li>API for service</li>
-<li>API for semaphore,queue ...etc.</li>
-</ul>
+#define taskSemaphoreEvent(sp,evt) taskManagerNotify(__wb_id, sp, evt)
 
-<h2>task API</h2>
 
-<ul>
-<li><a href="api/taskManagerTraceCallback.html">taskManagerTraceCallback</a></li>
-</ul>
+//task event define
+void evtI2C()
+{
 
-<p>This is used for task trace callback for task manager information ouput.</p>
+}
 
-<ul>
-<li><a href="api/taskManagerInit.html">taskManagerInit</a> Used for init all tasks.<br></li>
-<li><a href="api/taskManagerRun.html">taskManagerRun</a> Used for task event loop.<br></li>
-<li><a href="api/taskManagerTimeout.html">taskManagerTimeout</a> task manager tick.<br></li>
-<li><a href="api/taskManagerTick.html">taskManagerTick</a> get the task tick from startup.<br></li>
-<li><a href="api/taskSemaphoreEvent.html">taskSemaphoreEvent</a> register semaphore notify for event.</li>
-<li><a href="api/taskQueueEvent.html">taskQueueEvent</a> register queue notify for event.<br></li>
-<li><a href="api/taskRingbufEvent.html">taskRingbufEvent</a> register ringbuf notify for event.</li>
-</ul>
+extern semaphore_t semI2C;
+void test_code()
+{
+    taskSemaphoreEvent(&amp;semI2C,evtI2C);
 
-<h2>service API</h2>
+    //...   
 
-<h3>service manager api</h3>
+}
 
-<ul>
-<li><a href="api/serviceManagerAssertCallback.html">serviceManagerAssertCallback</a></li>
-</ul>
 
-<blockquote>
-<p>This api is used for register a callback for service assert false information output.</p>
-</blockquote>
+</code></pre>
 
-<ul>
-<li><a href="api/serviceManagerTimeout.html">serviceManagerTimeout</a> service manager tick. </li>
-<li><a href="api/serviceManagerTick.html">serviceManagerTick</a> get the service tick from startup.<br></li>
-<li><a href="api/serviceManagerStart.html">serviceManagerStart</a> start the service manager.<br></li>
-<li><a href="api/serviceManagerMinTick.html">serviceManagerMinTick</a> get the minimal service tick.</li>
-</ul>
+<p><a href="api/semaphoreInit.html">semaphoreInit</a><br>
+<a href="api/semaphorePost.html">semaphorePost</a><br>
+<a href="api/semaphorePend.html">semaphorePend</a><br>
+<a href="api/semaphoreAccept.html">semaphoreAccept</a>   </p>
 
-<h3>service control api</h3>
-
-<ul>
-<li><a href="api/serviceManagerMinTick.html">serviceManagerMinTick</a> get the minimal service tick.<br></li>
-<li><a href="api/serviceGetByName.html">serviceGetByName</a>   get the service handler.<br></li>
-<li><a href="api/serviceSuspend.html">serviceSuspend</a> suspend service.<br></li>
-<li><a href="api/serviceSuspendCurrent.html">serviceSuspendCurrent</a> suspend current service. </li>
-<li><a href="api/serviceResume.html">serviceResume</a>  resume service.<br></li>
-<li><a href="api/serviceSleep.html">serviceSleep</a>  service sleep.</li>
-</ul>
-
-<h3>service event api</h3>
-
-<ul>
-<li><a href="api/serviceEventPost.html">serviceEventPost</a>  post service event.</li>
-<li><a href="api/serviceEventClear.html">serviceEventClear</a>  clear service event.</li>
-<li><a href="api/serviceEventPend.html">serviceEventPend</a>  pend service event.</li>
-</ul>
-
-<h2>semaphore API</h2>
-
-<ul>
-<li><a href="api/semaphoreInit.html">semaphoreInit</a>  semaphore init.</li>
-<li><a href="api/semaphorePost.html">semaphorePost</a>  post semaphore.</li>
-<li><a href="api/semaphorePend.html">semaphorePend</a>  blocking pend semaphore.</li>
-<li><a href="api/semaphoreAccept.html">semaphoreAccept</a>  non-blocking accept semphore.</li>
-<li><a href="api/semaphoreNotify.html">semaphoreNotify</a>  task register semephore notify.</li>
-</ul>
-
-<h2>queue API</h2>
-
-<ul>
-<li><a href="api/queueInit.html">queueInit</a>  queue init.<br></li>
-<li><a href="api/queuePend.html">queuePend</a>  queue pend.<br></li>
-<li><a href="api/queuePost.html">queuePost</a>  queue post.<br></li>
-<li><a href="api/queuePostFront.html">queuePostFront</a>  queue post front.<br></li>
-<li><a href="api/queueFlush.html">queueFlush</a>  queue flash.<br></li>
-<li><a href="api/queueAccept.html">queueAccept</a>  queue accept.<br></li>
-</ul>
-
-<h2>ring buffer API</h2>
-
-<ul>
-<li><a href="api/ringbufInit.html">ringbufInit</a>  ring buffer init. </li>
-<li><a href="api/ringbufPost.html">ringbufPost</a>  ring buffer  post. </li>
-<li><a href="api/ringbufPend.html">ringbufPend</a>  ring buffer pend. </li>
-<li><a href="api/ringbufGet.html">ringbufGet</a>  ring buffer get.<br></li>
-<li><a href="api/ringbufCopy.html">ringbufCopy</a>  ring buffer copy. </li>
-<li><a href="api/ringbufSize.html">ringbufSize</a>  ring buffer  size. </li>
-</ul>
-
-<h2>block memory API</h2>
-
-<ul>
-<li><a href="api/blockMemInit.html">blockMemInit</a>  block memory init.<br></li>
-<li><a href="api/blockMemGet.html">blockMemGet</a>  block memory get.<br></li>
-<li><a href="api/blockMemPut.html">blockMemPut</a>  block memory put.<br></li>
-</ul>
+<p><a href="api.html">API reference</a></p>
 
 <hr>
 
