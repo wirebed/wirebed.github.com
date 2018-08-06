@@ -296,36 +296,50 @@ pre {
 	*/
 }
 </style>
-<title>manual.markdown</title>
+<title>ringbufSize.md</title>
 </head>
 <body>
-<h1><center>Wirebed OS User Manual</center></h1>
+<h1></h1>
+
+<h1><center>ringbufSize</center></h1>
 
 <hr>
 
-<p>The wirebed IDE enables user to get started writing embed C99 code easily
-(auto generate rtos code).</p>
+<pre><code class="CPP">/**
+* get ring buffer size.
+* @param r        - ring buffer struct pointer
+* @return         - ring buffer size
+*/
 
-<p><strong>List of Contents</strong></p>
+uint16_t ringbufSize(ringbuf_t *r);
 
-<ul>
-<li><a href="introduction.html">wirebed os introduction</a><br></li>
-<li><a href="copyright.html">wirebed os copyright</a><br></li>
-<li><a href="install.html">wirebed IDE windows installation</a></li>
-<li><a href="gettingstarted.html">wirebed os getting started</a></li>
-<li><a href="overview.html">wirebed os overview</a></li>
-<li><a href="sequence.html">wirebed os task start sequence</a></li>
-<li><a href="wirebededitor.html">wirebed IDE overview</a></li>
-<li><a href="wirebedgui.html">wirebed IDE GUI introduce</a></li>
-<li><a href="wirebedlib.html">wirebed os library</a></li>
-<li><a href="osinfo.html">wirebed os trace ablitiy</a></li>
-<li><a href="variabletrace.html">wirebed os variable trace</a></li>
-<li><a href="api.html">wirebed os api reference</a></li>
-</ul>
+
+extern ringbuf_t rf1;
+
+void test_code()
+{
+    uint32_t size;
+
+    size = ringbufSize(&amp;rf1);
+    //...
+}
+
+
+</code></pre>
+
+<p><a href="api/ringbufInit.html">ringbufInit</a><br>
+<a href="api/ringbufPost.html">ringbufPost</a><br>
+<a href="api/ringbufPend.html">ringbufPend</a><br>
+<a href="api/ringbufGet.html">ringbufGet</a><br>
+<a href="api/ringbufCopy.html">ringbufCopy</a><br>
+<a href="api/ringbufNotify.html">ringbufNotify</a>  </p>
+
+<p><a href="api.html">API reference</a></p>
 
 <hr>
 
-<p><strong><center>&copy; <a href="http://www.wirebed.com">www.wirebed.com</a></center></strong></p>
+<p><center><a href="manual.html">Table for Content</a> </center>
+<strong><center>&copy; <a href="http://www.wirebed.com">www.wirebed.com</a></center></strong></p>
 
 </body>
 </html>

@@ -296,36 +296,49 @@ pre {
 	*/
 }
 </style>
-<title>manual.markdown</title>
+<title>blockMemInit.md</title>
 </head>
 <body>
-<h1><center>Wirebed OS User Manual</center></h1>
+<h1></h1>
+
+<h1><center>blockMemInit</center></h1>
+
+<p><strong>note: define block_mem_t before use this api.</strong></p>
 
 <hr>
 
-<p>The wirebed IDE enables user to get started writing embed C99 code easily
-(auto generate rtos code).</p>
+<pre><code class="CPP">/**
+* block memory init.
+* @param pmem        - block memory struct pointer
+* @param addr        - block memory block addr  
+* @param nblks       - block memory block number
+* @param blksize     - block memory block size in byte.
+*/
 
-<p><strong>List of Contents</strong></p>
+uint32_t  blockMemInit (block_mem_t * pmem, void *addr, uint32_t nblks, uint32_t blksize);
 
-<ul>
-<li><a href="introduction.html">wirebed os introduction</a><br></li>
-<li><a href="copyright.html">wirebed os copyright</a><br></li>
-<li><a href="install.html">wirebed IDE windows installation</a></li>
-<li><a href="gettingstarted.html">wirebed os getting started</a></li>
-<li><a href="overview.html">wirebed os overview</a></li>
-<li><a href="sequence.html">wirebed os task start sequence</a></li>
-<li><a href="wirebededitor.html">wirebed IDE overview</a></li>
-<li><a href="wirebedgui.html">wirebed IDE GUI introduce</a></li>
-<li><a href="wirebedlib.html">wirebed os library</a></li>
-<li><a href="osinfo.html">wirebed os trace ablitiy</a></li>
-<li><a href="variabletrace.html">wirebed os variable trace</a></li>
-<li><a href="api.html">wirebed os api reference</a></li>
-</ul>
+static uint32_t data[10][4];
+block_mem_t mem1;
+
+void test_code()
+{
+    blockMemInit(&amp;mem1,data,dta,10,4*sizeof(uint32_t));
+    //...
+
+}
+
+
+</code></pre>
+
+<p><a href="api/blockMemGet.html">blockMemGet</a><br>
+<a href="api/blockMemPut.html">blockMemPut</a>   </p>
+
+<p><a href="api.html">API reference</a></p>
 
 <hr>
 
-<p><strong><center>&copy; <a href="http://www.wirebed.com">www.wirebed.com</a></center></strong></p>
+<p><center><a href="manual.html">Table for Content</a> </center>
+<strong><center>&copy; <a href="http://www.wirebed.com">www.wirebed.com</a></center></strong></p>
 
 </body>
 </html>
